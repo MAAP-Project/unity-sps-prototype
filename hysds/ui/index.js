@@ -19,7 +19,7 @@ exports.MOZART_BASE_URL = "https://100.10.100.100";
 // Mozart's ES url
 // exports.MOZART_ES_URL = "http://localhost:9998";
 exports.MOZART_ES_URL = "http://localhost:9200";
-exports.MOZART_ES_INDICES = "job_status";
+exports.MOZART_ES_INDICES = "ades-maaphec-dev-wpst-jobs";
 
 // Mozart's Rest API
 exports.MOZART_REST_API_BASE = "http://localhost:8888";

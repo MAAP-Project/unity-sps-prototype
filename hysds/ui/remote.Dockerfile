@@ -3,7 +3,7 @@ FROM node:13 as build
 
 WORKDIR /root
 
-RUN git clone https://github.com/hysds/hysds_ui.git
+RUN git clone https://github.com/MAAP-Project/hysds_ui.git
 
 COPY index.remote.template.js /root/hysds_ui/src/config/index.js
 COPY tosca.js figaro.js /root/hysds_ui/src/config/

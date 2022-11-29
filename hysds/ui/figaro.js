@@ -6,9 +6,16 @@ exports.FIGARO_DISPLAY_COLUMNS = [
   { Header: "node", accessor: "job.job_info.execute_node" },
   { Header: "timestamp", accessor: "@timestamp" },
   { Header: "duration", accessor: "job.job_info.duration" },
+  { Header: "endpoint", accessor: "job.job_info.ades_id" },
 ];
 
 exports.FILTERS = [
+  {
+    componentId: "ades_id",
+    dataField: "job.job_info.ades_id",
+    title: "ADES",
+    type: "single",
+  },
   {
     componentId: "resource",
     dataField: "resource",
@@ -100,12 +107,12 @@ exports.FILTERS = [
     title: "Retry Count",
     type: "single",
   },
-  {
-    componentId: "endpoint_id",
-    dataField: "endpoint_id.keyword",
-    title: "Endpoint ID",
-    type: "single",
-  },
+  // {
+  //   componentId: "endpoint_id",
+  //   dataField: "endpoint_id.keyword",
+  //   title: "Endpoint ID",
+  //   type: "single",
+  // },
 ];
 
 exports.SORT_OPTIONS = ["@timestamp"];
