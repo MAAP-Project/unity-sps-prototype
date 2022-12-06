@@ -45,3 +45,11 @@ resource "aws_ssm_parameter" "update_mozart_rest_api_url_stage_variable_of_api_g
   overwrite  = true
   depends_on = [kubernetes_service.mozart-service]
 }
+
+resource "aws_ssm_parameter" "update_performance_estimator_url_stage_variable_of_api_gateway" {
+  name       = format("/%s/%s/%s-%s/api-gateway/stage-variables/performance-estimator-url", var.project, var.venue, var.namespace, var.counter)
+  type       = "String"
+  value      = "${kubernetes_service.performance-estimator-service.status[0].load_balancer[0].ingress[0].hostname}:${var.service_port_map.performance_estimator_service}"
+  overwrite  = true
+  depends_on = [kubernetes_service.performance-estimator-service]
+}
